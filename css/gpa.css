@@ -1,59 +1,91 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,100,300);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,100,300);
 
 /* enable clicking on elements 'hiding' behind body in 3D */
-body     { pointer-events: none; }
-#impress { pointer-events: auto; }
+body     {
+	pointer-events: none;
+	background-color: #EBEBEB;
+}
 
-div {
-	font-family: Roboto;
+#impress {
+	pointer-events: auto;
+}
+
+/* COMMON STEP STYLES */
+
+.step {
+    width: 900px;
+    padding: 40px;
+    font-family: 'Roboto', sans-serif;
+
+    -webkit-box-sizing: border-box;
+    -webkit-transition: opacity 1s;
+}
+
+/* fade out inactive slides */
+.step:not(.active) {
+    opacity: 0.05;
 }
 
 /* STEP SPECIFIC STYLES */
 
-/* hint on the first slide */
+/* intro step*/
 
-.hint {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 200px;
-
-    background: rgba(0,0,0,0.5);
-    color: #EEE;
-    text-align: center;
-
-    font-size: 50px;
-    padding: 20px;
-
-    z-index: 100;
-
-    opacity: 0;
-
-    -webkit-transform: translateY(400px);
-    -moz-transform:    translateY(400px);
-    -ms-transform:     translateY(400px);
-    -o-transform:      translateY(400px);
-    transform:         translateY(400px);
-
-    -webkit-transition: opacity 1s, -webkit-transform 0.5s 1s;
-    -moz-transition:    opacity 1s,    -moz-transform 0.5s 1s;
-    -ms-transition:     opacity 1s,     -ms-transform 0.5s 1s;
-    -o-transition:      opacity 1s,      -o-transform 0.5s 1s;
-    transition:         opacity 1s,         transform 0.5s 1s;
+#intro .giant {
+	font-family: 'Roboto Slab', serif;
+	font-size: 1600px;
 }
 
-.impress-on-bored .hint {
+#intro .rest {
+	font-size: 24px;
+	opacity: 0.7;
+}
+
+#intro.present .giant {
+	font-size: 156px;
+	-webkit-transition: font-size 10s ease;
+}
+
+/* challenge/opportunity step */
+#opps b {
+	display: inline-block;
+	font-size: 48px;
+	font-weight: 300;
+	opacity: 0.9;
+}
+
+#opps .three {
+	font-size: 156px;
+}
+
+#opps .o {
+	color: #777777;
+	-webkit-transform: rotateX(90deg);
+}
+
+#opps.present .c {
+	-webkit-transform: rotateX(-90deg);
+	-webkit-transition: -webkit-transform 3s;
+}
+
+#opps.present .o {
+	-webkit-transform: rotateX(0deg);
+	-webkit-transition: -webkit-transform 3s;
+}
+
+/* overview step */
+
+#overview {
+    z-index: -1;
+    padding: 0;
+}
+
+.impress-on-overview .step {
     opacity: 1;
+    cursor: pointer;
+}
 
-    -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s;
-    -moz-transition:    opacity 1s 5s,    -moz-transform 0.5s;
-    -ms-transition:     opacity 1s 5s,     -ms-transform 0.5s;
-    -o-transition:      opacity 1s 5s,      -o-transform 0.5s;
-    transition:         opacity 1s 5s,         transform 0.5s;
-
-    -webkit-transform: translateY(0px);
-    -moz-transform:    translateY(0px);
-    -ms-transform:     translateY(0px);
-    -o-transform:      translateY(0px);
-    transform:         translateY(0px);
+.impress-on-overview #intro .giant {
+    font-size: 156px;
 }
