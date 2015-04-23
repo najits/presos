@@ -16,7 +16,7 @@ body     {
 
 .step {
     width: 900px;
-    padding: 40px;
+    padding: 10px 15px 10px 15px;
     font-family: 'Roboto', sans-serif;
 
     -webkit-box-sizing: border-box;
@@ -25,7 +25,7 @@ body     {
 
 /* fade out inactive slides */
 .step:not(.active) {
-    opacity: 0.01;
+    opacity: 0.05;
 }
 
 /* STEP SPECIFIC STYLES */
@@ -69,12 +69,13 @@ body     {
 	fill: crimson;
 	fill-opacity: 0.15;
 	stroke: crimson;
-	stroke-opacity: 0.9;
+	stroke-opacity: 0.8;
 	stroke-width: 2px;
 }
 
 #opps .c {
 	color: crimson;
+	opacity: 0.8;
 }
 
 #opps .o {
@@ -86,22 +87,22 @@ body     {
 #opps.present .c {
 	opacity: 0;
 	-webkit-transform: rotateX(-90deg);
-	-webkit-transition: opacity 10ms 3500ms,
-						-webkit-transform 3s 1s;
+	-webkit-transition: opacity 10ms 3s,
+						-webkit-transform 3s 500ms;
 }
 
 #opps.present .o {
-	opacity: 1;
+	opacity: 0.8;
 	-webkit-transform: rotateX(0deg);
-	-webkit-transition: opacity 10ms 1s,
-						-webkit-transform 3s 1s;
+	-webkit-transition: opacity 10ms 500ms,
+						-webkit-transform 3s 500ms;
 }
 
 #opps.present circle {
 	stroke: darkgreen;
 	fill: darkgreen;
-	-webkit-transition: stroke 3s 1s,
-						fill 3s 1s;
+	-webkit-transition: stroke 3s 500ms,
+						fill 3s 500ms;
 }
 
 /* opps 1-3 steps */
@@ -123,9 +124,113 @@ body     {
 	font-size: 36px;
 	font-weight: 100;
 }
-.opps-steps.present .opp-circle {
-	/*-webkit-transform: translateX(200px);
-	-webkit-transition: -webkit-transform 5s;*/
+
+.opps-steps .risk {
+	font-family: 'Roboto Slab';
+	font-weight: 400;
+}
+
+/* securities */
+
+.security img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.geeks img {
+	width: 80%;
+	height: 80%;
+}
+
+.equations img {
+	width: 95%;
+	height: 80%;
+}
+
+.machines img {
+	width: 100%;
+	height: 100%;
+}
+
+/* portfolios */
+
+.portfolio img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sigma p {
+	text-align: center;
+	font-size: 150px;
+	font-family: 'Times';
+	font-weight: 300;
+	color: #444;
+}
+
+.sigma sub {
+	font-size: 70px;
+}
+
+#portfolio-2.past {
+	opacity: 0;
+}
+
+#portfolio-3.present img {
+	height: 1%;
+	width: 1%;
+	-webkit-transition: all 10s;
+}
+
+#portfolio-3.past img {
+	height: 1%;
+	width: 1%;
+}
+
+/* closing */
+
+#mcost .axes {
+	stroke: #aeaeae;
+	stroke-width: 4px;
+}
+
+#mcost .axes text {
+	stroke: #555;
+	stroke-opacity: 0.5;
+	stroke-width: 2px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	font-size: 28px;
+}
+
+#mcost .fixed {
+	stroke: #777;
+	stroke-width: 2px;
+	stroke-opacity: 0.8;
+}
+
+#mcost .variable-lines .red-line {
+	stroke: crimson;
+	stroke-width: 3px;
+	stroke-opacity: 0.8;
+}
+
+#mcost .areas .red {
+	fill: crimson;
+	fill-opacity: 0.2;
+}
+
+#mcost .areas .green {
+	fill: darkgreen;
+}
+
+#end p {
+	text-align: center;
+	font-size: 70px;
+	font-family: 'Roboto', serif;
+	font-weight: 100;
+	color: #555;
 }
 
 /* overview step */
@@ -142,4 +247,17 @@ body     {
 
 .impress-on-overview #intro .giant {
     font-size: 156px;
+}
+
+.impress-on-overview #security-4 {
+	display: none;
+}
+
+.impress-on-overview #portfolio-2 {
+	display: none;
+}
+
+.impress-on-overview #portfolio-3 img {
+	height: 15%;
+	width: 15%;
 }

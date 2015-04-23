@@ -16,9 +16,13 @@
         <!-- styles -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/gpa.css">
+
+        <script src="js/vendor/d3.min.js"></script>
     </head>
     <body class="impress-not-supported">
         <div id="impress">
+
+            <!-- Part 1 -->
 
             <div id="intro" class="step" data-x="-1000" data-y="-1500" data-scale="8">
                 <span class="giant">Giant</span><br/>
@@ -28,9 +32,9 @@
             <div id="opps" class="step" data-x="-1000" data-y="-1500" data-z="-3000" data-rotate="90" data-scale="2">
                 <svg width="50" height="200">
                     <g>
-                        <circle cx="25" cy="45" r="20"></circle>
-                        <circle cx="25" cy="110" r="20"></circle>
-                        <circle cx="25" cy="175" r="20"></circle>
+                        <circle cx="25" cy="45" r="20"/>
+                        <circle cx="25" cy="110" r="20"/>
+                        <circle cx="25" cy="175" r="20"/>
                     </g>
                 </svg>
                 <div>
@@ -47,12 +51,12 @@
                     <div>
                         <svg width="50" height="50">
                             <g class="opp-circle">
-                                <circle cx="25" cy="25" r="20"></circle>
+                                <circle cx="25" cy="25" r="20"/>
                             </g>
                         </svg>
                     </div>
                     <div class="text">
-                        <span>&nbsp&nbsp&nbspAnalyzing riskiness of individual investor portfolios</span>
+                        <span>&nbsp&nbspMeasuring </span><span class="risk">risks</span><span> facing individual investors' portfolios</span>
                     </div>
                 </div>
             </div>
@@ -62,12 +66,12 @@
                     <div>
                         <svg width="50" height="50">
                             <g class="opp-circle">
-                                <circle cx="25" cy="25" r="20"></circle>
+                                <circle cx="25" cy="25" r="20"/>
                             </g>
                         </svg>
                     </div>
                     <div class="text">
-                        <span>&nbsp&nbsp&nbspMeasuring risks in Retail investment products</span>
+                        <span>&nbsp&nbspAssessing </span><span class="risk">risk</span><span> across the Retail product landscape</span>
                     </div>
                 </div>
             </div>
@@ -77,15 +81,114 @@
                     <div>
                         <svg width="50" height="50">
                             <g class="opp-circle">
-                                <circle cx="25" cy="25" r="20"></circle>
+                                <circle cx="25" cy="25" r="20"/>
                             </g>
                         </svg>
                     </div>
                     <div class="text">
-                        <span>&nbsp&nbsp&nbspRisk managing our own SMA business!</span>
+                        <span>&nbsp&nbsp</span><span class="risk">Risk</span><span> managing our own SMA business!</span>
                     </div>
                 </div>
             </div>
+
+            <!-- Part 2 -->
+
+            <!-- Securities -->
+
+            <div id="security-1" class="step security geeks" data-x="-4000" data-y="750" data-z="-1500" data-scale="2" data-rotate="360">
+                <div><img src="img/geek.png"/></div>
+            </div>
+
+            <div id="security-2" class="step security equations" data-x="-2250" data-y="750" data-z="-2500" data-scale="2" data-rotate="360">
+                <div><img src="img/equations.gif"/></div>
+            </div>
+
+            <div id="security-3" class="step security machines" data-x="-3000" data-y="2000" data-z="-3500" data-scale="2" data-rotate="360">
+                <div><img src="img/machines.png"/></div>
+            </div>
+
+            <div id="security-4" class="step security aok" data-x="-2800" data-y="1000" data-scale="4" data-rotate="360">
+                <div><img src="img/aok.png"/></div>
+            </div>
+
+            <!-- Portfolios -->
+            <div id="portfolio-1" class="step portfolio sigma" data-x="500" data-y="500" data-scale="2">
+                <div>
+                    <p><em>w<sub>i</sub>w<sub>j</sub>&#931;&#931;&sigma;<sub>i</sub>&sigma;<sub>j</sub>&rho;<sub>ij</sub></em></p>
+                </div>
+            </div>
+
+            <div id="portfolio-2" class="step portfolio machines" data-x="500" data-y="2000" data-z="-3500" data-scale="2">
+                <div><img src="img/machines.png"/></div>
+            </div>
+
+            <div id="portfolio-3" class="step portfolio machines" data-x="500" data-y="2000" data-z="-3500" data-scale="2">
+                <div><img src="img/machines.png"/></div>
+            </div>
+
+            <!-- Closing -->
+
+            <div id="mcost" class="step" data-x="3000" data-y="500" data-scale="2">
+                <div>
+                    <svg width="1000px" height="600px" class="chart-container">
+                        <g class="axes">
+                            <line x1="50" y1="550" x2="750" y2="550"/>
+                            <line x1="52" y1="550" x2="52" y2="50"/>
+                        </g>
+                        <g class="fixed">
+                            <line x1="52" y1="400" x2="750" y2="400"/>
+                        </g>
+                    </svg>
+                    <script>
+                        d3.select('.chart-container')
+                            .on('click', function() {
+                                d3.select(this).select('.axes')
+                                    .append('text')
+                                    .attr('x', 635)
+                                    .attr('y', 540)
+                                    .text('Portfolios');
+
+                                var areas = d3.select(this)
+                                                .append('g').attr('class', 'areas');
+
+                                areas.append('path')
+                                        .attr('class', 'red')
+                                        .attr('d', 'M 52 400 L 750 100 L 750 400 z')
+                                            .transition().duration(5000)
+                                        .attr('d', 'M 52 400 L 750 385 L 750 400 z');
+
+                                areas.append('path')
+                                        .attr('class', 'green')
+                                        .attr('d', 'M 52 400 L 750 100 L 750 100 z')
+                                        .style('fill-opacity', 0)
+                                            .transition().duration(5000)
+                                        .attr('d', 'M 52 400 L 750 100 L 750 385 z')
+                                        .style('fill-opacity', 0.15);
+
+                                var lines = d3.select(this)
+                                                .append('g').attr('class', 'variable-lines');
+
+                                lines.append('line')
+                                        .attr('class', 'red-line')
+                                        .attr({
+                                            'x1': 52,
+                                            'y1': 400,
+                                            'x2': 750,
+                                            'y2': 100
+                                        })
+                                            .transition().duration(5000)
+                                        .attr('x2', 750)
+                                        .attr('y2', 385);
+                            });
+                    </script>
+                </div>
+            </div>
+
+            <div id="end" class="step" data-x="3000" data-y="1700" data-scale="8">
+                <div><p>More is...<em>better</em></p></div>
+            </div>
+
+            <!-- Overview -->
 
             <div id="overview" class="step" data-x="0" data-y="0" data-scale="10"></div>
 
