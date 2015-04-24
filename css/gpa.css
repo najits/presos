@@ -37,7 +37,7 @@ body     {
 /* intro step*/
 
 #intro .giant {
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Roboto Slab', 'Helvetica', serif;
 	font-size: 1600px;
 }
 
@@ -65,7 +65,7 @@ body     {
 
 #opps .three {
 	color: #333333;
-	font-family: 'Roboto Slab', serif;
+	font-family: 'Roboto Slab', 'Helvetica', serif;
 	font-size: 256px;
 }
 
@@ -131,7 +131,7 @@ body     {
 }
 
 .opps-steps .risk {
-	font-family: 'Roboto Slab';
+	font-family: 'Roboto Slab', 'Arial', serif;
 	font-weight: 400;
 }
 
