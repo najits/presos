@@ -1,7 +1,3 @@
-/* Fonts */
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700,100,300);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,100,300);
-
 /* enable clicking on elements 'hiding' behind body in 3D */
 body     {
 	pointer-events: none;
