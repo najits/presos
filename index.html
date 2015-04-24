@@ -11,6 +11,7 @@
 
         <!-- styles -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/gpa.css">
 
         <!-- scripts -->
@@ -53,7 +54,7 @@
                         </svg>
                     </div>
                     <div class="text">
-                        <span>&nbsp&nbspMeasuring </span><span class="risk">risks</span><span> facing individual investors' portfolios</span>
+                        <span>&nbsp&nbspMeasuring the </span><span class="risk">risks</span><span> in individual investors' portfolios</span>
                     </div>
                 </div>
             </div>
@@ -68,7 +69,7 @@
                         </svg>
                     </div>
                     <div class="text">
-                        <span>&nbsp&nbspAssessing </span><span class="risk">risk</span><span> across the Retail product landscape</span>
+                        <span>&nbsp&nbspAssessing </span><span class="risk">risk</span><span> across the Retail product universe</span>
                     </div>
                 </div>
             </div>
@@ -126,11 +127,12 @@
             <!-- Closing -->
 
             <div id="mcost" class="step" data-x="3000" data-y="500" data-scale="2">
-                <div>
+                <div class="svg-container">
+                    <p class="tandm"><i class="fa fa-clock-o"></i> & <i class="fa fa-money"></i></p>
                     <svg width="1000px" height="600px" class="chart-container">
                         <g class="axes">
                             <line x1="50" y1="550" x2="750" y2="550"/>
-                            <line x1="52" y1="550" x2="52" y2="50"/>
+                            <line x1="52" y1="550" x2="52" y2="10"/>
                         </g>
                         <g class="fixed">
                             <line x1="52" y1="400" x2="750" y2="400"/>
@@ -139,6 +141,7 @@
                     <script>
                         d3.select('.chart-container')
                             .on('click', function() {
+
                                 d3.select(this).select('.axes')
                                     .append('text')
                                     .attr('x', 635)
@@ -152,15 +155,16 @@
                                         .attr('class', 'red')
                                         .attr('d', 'M 52 400 L 750 100 L 750 400 z')
                                             .transition().duration(5000)
-                                        .attr('d', 'M 52 400 L 750 385 L 750 400 z');
+                                        .attr('d', 'M 52 400 L 750 375 L 750 400 z');
 
+                                d3.select(this).select('.green').remove();
                                 areas.append('path')
                                         .attr('class', 'green')
                                         .attr('d', 'M 52 400 L 750 100 L 750 100 z')
                                         .style('fill-opacity', 0)
                                             .transition().duration(5000)
-                                        .attr('d', 'M 52 400 L 750 100 L 750 385 z')
-                                        .style('fill-opacity', 0.15);
+                                        .attr('d', 'M 52 400 L 750 100 L 750 375 z')
+                                        .style('fill-opacity', 0.20);
 
                                 var lines = d3.select(this)
                                                 .append('g').attr('class', 'variable-lines');
@@ -175,14 +179,14 @@
                                         })
                                             .transition().duration(5000)
                                         .attr('x2', 750)
-                                        .attr('y2', 385);
+                                        .attr('y2', 375);
                             });
                     </script>
                 </div>
             </div>
 
             <div id="end" class="step" data-x="3000" data-y="1700" data-scale="8">
-                <div><p>More is...<em>better</em></p></div>
+                <div><p>More is...<em>more</em></p></div>
             </div>
 
             <!-- Overview -->
