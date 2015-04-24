@@ -159,14 +159,14 @@
                                             .transition().duration(5000)
                                         .attr('d', 'M 52 400 L 750 375 L 750 400 z');
 
-                                d3.select(this).select('.green').remove();
-                                areas.append('path')
-                                        .attr('class', 'green')
-                                        .attr('d', 'M 52 400 L 750 100 L 750 100 z')
-                                        .style('fill-opacity', 0)
-                                            .transition().duration(5000)
-                                        .attr('d', 'M 52 400 L 750 100 L 750 375 z')
-                                        .style('fill-opacity', 0.20);
+                                // d3.select(this).select('.green').remove();
+                                // areas.append('path')
+                                //         .attr('class', 'green')
+                                //         .attr('d', 'M 52 400 L 750 100 L 750 100 z')
+                                //         .style('fill-opacity', 0)
+                                //             .transition().duration(5000)
+                                //         .attr('d', 'M 52 400 L 750 100 L 750 375 z')
+                                //         .style('fill-opacity', 0.10);
 
                                 var lines = d3.select(this)
                                                 .append('g').attr('class', 'variable-lines');
