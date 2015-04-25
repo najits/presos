@@ -96,7 +96,7 @@
             <!-- Securities -->
 
             <div id="security-1" class="step security geeks" data-x="-4000" data-y="750" data-z="-1500" data-scale="2" data-rotate="360">
-                <div><img src="img/geek.png"/></div>
+                <div><img src="img/geeks2.png"/></div>
             </div>
 
             <div id="security-2" class="step security equations" data-x="-2250" data-y="750" data-z="-2500" data-scale="2" data-rotate="360">
@@ -131,13 +131,13 @@
             <div id="mcost" class="step" data-x="3000" data-y="500" data-scale="2">
                 <div class="svg-container">
                     <p class="tandm"><i class="fa fa-clock-o"></i> & <i class="fa fa-money"></i></p>
-                    <svg width="1000px" height="600px" class="chart-container">
+                    <svg width="850px" height="600px" class="chart-container">
                         <g class="axes">
-                            <line x1="50" y1="550" x2="750" y2="550"/>
+                            <line x1="50" y1="550" x2="800" y2="550"/>
                             <line x1="52" y1="550" x2="52" y2="10"/>
                         </g>
                         <g class="fixed">
-                            <line x1="52" y1="400" x2="750" y2="400"/>
+                            <line x1="52" y1="400" x2="800" y2="400"/>
                         </g>
                     </svg>
                     <script>
@@ -146,7 +146,7 @@
 
                                 d3.select(this).select('.axes')
                                     .append('text')
-                                    .attr('x', 635)
+                                    .attr('x', 685)
                                     .attr('y', 540)
                                     .text('Portfolios');
 
@@ -155,9 +155,9 @@
 
                                 areas.append('path')
                                         .attr('class', 'red')
-                                        .attr('d', 'M 52 400 L 750 100 L 750 400 z')
+                                        .attr('d', 'M 52 400 L 800 100 L 800 400 z')
                                             .transition().duration(5000)
-                                        .attr('d', 'M 52 400 L 750 375 L 750 400 z');
+                                        .attr('d', 'M 52 400 L 800 375 L 800 400 z');
 
                                 // d3.select(this).select('.green').remove();
                                 // areas.append('path')
@@ -176,11 +176,11 @@
                                         .attr({
                                             'x1': 52,
                                             'y1': 400,
-                                            'x2': 750,
+                                            'x2': 800,
                                             'y2': 100
                                         })
                                             .transition().duration(5000)
-                                        .attr('x2', 750)
+                                        .attr('x2', 800)
                                         .attr('y2', 375);
                             });
                     </script>
