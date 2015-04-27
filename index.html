@@ -156,7 +156,8 @@
                                 areas.append('path')
                                         .attr('class', 'red')
                                         .attr('d', 'M 52 400 L 800 100 L 800 400 z')
-                                            .transition().duration(5000)
+                                            .transition()
+                                            .delay(100).duration(5000)
                                         .attr('d', 'M 52 400 L 800 375 L 800 400 z');
 
                                 // d3.select(this).select('.green').remove();
@@ -179,7 +180,8 @@
                                             'x2': 800,
                                             'y2': 100
                                         })
-                                            .transition().duration(5000)
+                                            .transition()
+                                            .delay(100).duration(5000)
                                         .attr('x2', 800)
                                         .attr('y2', 375);
                             });
